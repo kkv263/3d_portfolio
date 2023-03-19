@@ -1,0 +1,54 @@
+@use "variables";
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Questrial', sans-serif;
+  background-color: variables.$primary-color;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 50vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 600;
+  margin: 0;
+  padding-bottom: 16px;
+  color: #000;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.sectionTitle {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: variables.$primary-color;
+  color: variables.$secondary-color;
+  margin: 0;
+  padding: 8px;
+}

@@ -1,0 +1,92 @@
+@use "variables";
+
+.hero {
+  padding-top: 48px;
+  display: flex;
+  width: 100%;
+  background-color: #F7FBFF;
+
+  @media (max-width: 1023px) {
+    padding-top: 64px;
+  }
+
+  h1 {
+    display: flex;
+    flex-direction: column;
+    font-size: 96px;
+    text-transform: uppercase;
+    line-height: 0.8;
+    text-align: right;
+    color: variables.$primary-color;
+    @media (max-width: 1023px) {
+      text-align: center;
+    }
+  }
+}
+
+.hero__container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+
+  @media (max-width: 1023px) {
+    flex-direction: column;
+  }  
+}
+
+.eyebrow {
+  padding-bottom: 32px;
+  text-align: right;
+  letter-spacing: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  @media (max-width: 1023px) {
+    text-align: center;
+  }
+}
+
+.hero__content {
+  flex: 1 0 30%;
+  max-width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+
+
+  @media (max-width: 1023px) {
+    flex: 1 0 auto;
+    max-width: none;
+    width: 100%;
+    align-items: center;
+  }
+}
+
+.hero__canvas {
+  width: 100%;
+  min-height: 400px;
+  width: 500px;
+
+  @media (max-width: 1023px) {
+    flex: 1 0 auto;
+    max-width: none;
+    min-height: 320px;
+    width: 400px;
+    margin: 0 auto;
+  }
+}
+
+.video__wrapper {
+  position: relative;
+  padding-bottom: 100%; /* 16:9 */
+  height: 0;
+
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

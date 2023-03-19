@@ -1,0 +1,45 @@
+@use "variables";
+
+.nav {
+  background-color: variables.$secondary-color;
+  section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.nav__logo {
+  width: 64px;
+  height: 64px;
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+  li {
+    margin-right: 16px;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .3s ease;
+      text-decoration: none;
+      color: variables.$primary-color;
+
+      &:hover {
+        box-shadow: 0 1px 0px 0px variables.$primary-color;
+
+        svg, path {
+          fill: variables.$secondary-color;
+        }
+      }
+    }
+  }
+}
+
+.github_logo {
+  height: 24px;
+  width: 24px;
+}

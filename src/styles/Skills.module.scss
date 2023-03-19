@@ -1,0 +1,83 @@
+@use 'variables';
+
+.skills {
+  background: variables.$secondary-color;
+  position: relative;
+  // min-height: 800px;
+  padding: 64px 0 32px;
+}
+
+.skills__list {
+  margin: 0 auto;
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 800px;
+  li {
+    width: 96px;
+    height: 96px;
+    justify-self: center;
+    cursor: pointer;
+  }
+}
+
+.skills__info {
+  display: flex;
+  margin: 32px auto 0;
+  border: 1px solid #111;
+  max-width: 400px;
+  border-radius: 4px;
+  padding: 24px 16px;
+  position: relative;
+
+  &_left {
+    padding-right: 16px;
+  }
+  
+  &_right {
+    width: 100%;
+  }
+}
+
+.skills__img_wrapper {
+  img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+}
+
+.skills__level {
+  display: flex;
+  align-items: center;
+  height: 16px;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 4px 12px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  width: calc(100% - 24px);
+}
+
+[data-level="advanced"] {
+  background-color: #ad1035;
+}
+
+[data-level="intermediate"] {
+  background-color: #fb8500;
+}
+
+[data-level="casual"] {
+  background-color: #219ebc;
+}
+
+.soyjaks__img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 400px;
+}
