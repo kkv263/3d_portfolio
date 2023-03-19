@@ -1,80 +1,60 @@
 import styles from '../styles/Projects.module.scss'
 import globals from '../styles/globals.module.scss'
-import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
 import { SectionWrapper } from './hoc';
-import { ReactComponent as CaretDown } from '../assets/caret-down.svg'
+import CartsCanvas from './canvas/Carts';
 
 const Projects = () => {
-  const [isOpen, setOpen] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
-
   const cards = [
     { title: 'Portfolio', 
       subtitle: 'React Landing Page',
       img: 'https://place-hold.it/480x480',
       alt: '',
-      description: '',
-      tags: ['threejs', 'react']
+      description: `You're looking at this project now! 3D & motion was the main focus of this project. I utilized Blender to create and modify 3d models, threejs to load them on the page, and react to build out the site. 90% of the models and art on this page was done by hand by yours truly.`,
+      tags: ['threejs', 'react'],
+      cart: './gameboy_cartridge.gltf'
     },
     { title: 'D&D Friend Bot ', 
       subtitle: 'Discord Bot',
       img: 'https://place-hold.it/480x480',
       alt: '',
-      description: '',
-      tags: ['discord', 'python']
+      description: 'An all around custom general bot was created for a Dungeons and Dragons discord server. From features such as setting up timers, character management, lookup tools, and many more. Works with a database on to keep track of characters for players on the server.',
+      tags: ['discord', 'python'],
+      cart: './gameboy_cartridge_copy.gltf'
     },
     { title: 'Potion (Unfinished)', 
       subtitle: 'Svelte Web Application',
       img: 'https://place-hold.it/480x480',
       alt: '',
-      description: '',
-      tags: ['svelte']
+      description: 'A one stop hub primarly for streamers. The app helps streamers off/on stream by communicating with different APIs to keep track of socials. The apps also features OBS remote feature to control their streams. An implementation of user authentication (OAUTH2) and the use of a database stores users data so they can save their progress.',
+      tags: ['svelte', 'supabase', 'oauth2'],
+      cart: './gameboy_cartridge_copy_2.gltf'
     },
   ];
 
   return (
       <>
-        <h2 className={globals.sectionTitle}>PROJECTS</h2>
+        <div className={`${globals.eyebrow}`}>// PROJECTS</div>
+        <h2 className={globals.sectionTitle}>What projects have I worked on?</h2>
         <ul className={styles.cards__list}>
           {cards.map((card,index) => (
-            <li key={index}>
-              <motion.div onClick={() => {setOpen(!isOpen); setActiveIndex(index);}} className={styles.cards__card}
-                transition={{ layout: { duration: 1, type: "spring"} }}
-                layout
-              >
+            <li key={index} className={styles.projects__container}>
+              <div className={styles.cart__container}><CartsCanvas cart={card.cart}/> </div>
+              <div className={styles.cards__card}>
                 <header>
                   <h2 className={styles.cards__title}>{card.title}</h2>
                   <h4 className={styles.cards__subtitle}>{card.subtitle}</h4>
                 </header>
-                <div className={styles.cards__imgWrapper}>
-                  <img src={card.img} alt={card.alt} />
-                  <ul className={styles.cards__tags}>
-                  {card.tags.map((tag, index) => ( <li key={index} className={styles.cards__tag} >{tag}</li>))}
-                  </ul>
-                </div>
+                <ul className={styles.cards__tags}>
+                {card.tags.map((tag, index) => ( <li key={index} className={styles.cards__tag} >{tag}</li>))}
+                </ul>
                 <div>
-                  <div>{card.description}</div>
-                  <button type="button" className={styles.card__button}><CaretDown/></button>
+                  <div className={styles.card__description}>{card.description}</div>
+                  <button type="button" className={styles.card__button}>Learn more</button>
                 </div>
-              </motion.div>
+              </div>
             </li>
           ))}
         </ul>
-        <AnimatePresence>
-          {isOpen && 
-            <motion.div className={styles.modal}
-              initial={{opacity: 0}}
-              animate={{opacity: 1}}
-              exit={{opacity: 0}}
-            >
-              <div onClick={() => setOpen(false)} className={styles.modal__overlay}></div>
-              <div className={styles.modal__content}>
-                <div>{cards[activeIndex].title}</div>
-              </div>
-            </motion.div>
-          }
-        </AnimatePresence>
     </>
   )
 }

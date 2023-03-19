@@ -1,13 +1,14 @@
 @use "variables";
 
 .hero {
-  padding-top: 48px;
+  padding: 48px 0 64px;
   display: flex;
   width: 100%;
   background-color: #F7FBFF;
+  position: relative;
 
   @media (max-width: 1023px) {
-    padding-top: 64px;
+    padding-top: 16px;
   }
 
   h1 {
@@ -34,7 +35,7 @@
   }  
 }
 
-.eyebrow {
+.hero__eyebrow {
   padding-bottom: 32px;
   text-align: right;
   letter-spacing: 10px;

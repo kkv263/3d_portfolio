@@ -2,27 +2,28 @@ import { Suspense, useEffect,  useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 
-const Computers = () => {
-  const computer = useGLTF('./among_us/scene.gltf');
+const Carts = (props:any) => {
+  const cart = useGLTF(props.cart) as any;
   return (
     <mesh>
       <hemisphereLight intensity={2} groundColor='black' />
       <pointLight intensity={1} />
       <primitive
-        object={computer.scene}
-        position={[0, -30, -1.5]}
-        rotation={[0, 1, -0.1]}
+        object={cart.scene}
+        scale={3}
+        position={[0, -1.5, 0.1]}
+        rotation={[-0.05, 0, 0]}
       />
     </mesh>
   );
 }
 
-const ComputersCanvas = () => {
+const CartsCanvas = ( {cart}:any ) => {
   return (
     <Canvas
       frameloop='demand'
       shadows
-      camera={{ position: [100, 100, 0], fov: 40 }}
+      camera={{ position: [4, 0, 0], fov: 60 }}
       gl={{ preserveDrawingBuffer: true }}
     >
       {/* <Suspense fallback={<CanvasLoader />}> */}
@@ -32,9 +33,9 @@ const ComputersCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
           autoRotate
-          autoRotateSpeed={8}
+          autoRotateSpeed={3}
         />
-        <Computers/>
+        <Carts cart={cart}/>
       </Suspense>
 
       <Preload all />
@@ -42,4 +43,4 @@ const ComputersCanvas = () => {
   );
 };
 
-export default ComputersCanvas;
+export default CartsCanvas;

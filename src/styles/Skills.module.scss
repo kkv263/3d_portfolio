@@ -3,8 +3,11 @@
 .skills {
   background: variables.$secondary-color;
   position: relative;
-  // min-height: 800px;
-  padding: 64px 0 32px;
+  padding: 64px 0;
+}
+
+.skills__container {
+  // display: flex;
 }
 
 .skills__list {
@@ -13,12 +16,27 @@
   list-style: none;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  width: 800px;
+  max-width: 800px;
+
+  @media (max-width: 1023px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+
   li {
     width: 96px;
     height: 96px;
     justify-self: center;
     cursor: pointer;
+    opacity: 0.5;
+
+    &[data-active=true] {
+      opacity: 1;
+    }
   }
 }
 
@@ -26,10 +44,10 @@
   display: flex;
   margin: 32px auto 0;
   border: 1px solid #111;
-  max-width: 400px;
   border-radius: 4px;
   padding: 24px 16px;
   position: relative;
+  max-width: 800px;
 
   &_left {
     padding-right: 16px;
@@ -64,14 +82,18 @@
 
 [data-level="advanced"] {
   background-color: #ad1035;
+  box-shadow: rgba(#ad1035, 0.4) 0px 5px, rgba(#ad1035, 0.3) 0px 10px, rgba(#ad1035, 0.2) 0px 15px, rgba(#ad1035, 0.1) 0px 20px, rgba(#ad1035, 0.05) 0px 25px;
 }
 
 [data-level="intermediate"] {
   background-color: #fb8500;
+  box-shadow: rgba(#fb8500, 0.4) 0px 5px, rgba(#fb8500, 0.3) 0px 10px, rgba(#fb8500, 0.2) 0px 15px, rgba(#fb8500, 0.1) 0px 20px, rgba(#fb8500, 0.05) 0px 25px;
+
 }
 
 [data-level="casual"] {
   background-color: #219ebc;
+  box-shadow: rgba(#219ebc, 0.4) 0px 5px, rgba(#219ebc, 0.3) 0px 10px, rgba(#219ebc, 0.2) 0px 15px, rgba(#219ebc, 0.1) 0px 20px, rgba(#219ebc, 0.05) 0px 25px;
 }
 
 .soyjaks__img {

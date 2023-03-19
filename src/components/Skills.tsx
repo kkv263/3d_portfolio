@@ -4,18 +4,18 @@ import BallCanvas from './canvas/Ball'
 import { SectionWrapper } from './hoc'
 import javascript from '../assets/skills/javascript.png'
 import python from '../assets/skills/python.png'
-import css from '../assets/skills/css.png'
 import html from '../assets/skills/html.png'
+import css from '../assets/skills/css.png'
 import typescript from '../assets/skills/typescript.png'
 import reactjs from '../assets/skills/reactjs.png'
 import svelte from '../assets/skills/svelte.png'
+import optimizely from '../assets/skills/optimizely.svg'
 import figma from '../assets/skills/figma.png'
-import sass from '../assets/skills/sass.png'
 import photoshop from '../assets/skills/photoshop.png'
 import blender from '../assets/skills/blender.png'
 import kermit from '../assets/skills/kermit.png'
-import soyjaks from '../assets/soyjaks.png';
-import { useState}  from 'react';
+import { useState }  from 'react';
+import { motion } from 'framer-motion';
 
 const Skills = () => {
   const skills = [
@@ -32,16 +32,16 @@ const Skills = () => {
       desc: 'programming language'
     },
     {
-      title: 'CSS',
-      img: css,
-      level: 'advanced',
-      desc: 'programming language'
-    },
-    {
       title: 'HTML',
       img: html,
       level: 'advanced',
       desc: 'markup language',
+    },
+    {
+      title: 'CSS',
+      img: css,
+      level: 'advanced',
+      desc: 'programming language'
     },
     {
       title: 'Typescript',
@@ -62,6 +62,12 @@ const Skills = () => {
       desc: 'front-end framework'
     },
     {
+      title: 'Optimizely',
+      img: optimizely,
+      level: 'intermediate',
+      desc: 'a/b testing platform'
+    },
+    {
       title: 'Photoshop',
       img: photoshop,
       level: 'intermediate',
@@ -72,12 +78,6 @@ const Skills = () => {
       img: figma,
       level: 'advanced',
       desc: 'design software'
-    },
-    {
-      title: 'Sass',
-      img: sass,
-      level: 'advanced',
-      desc: 'scripting styling language'
     },
     {
       title: 'Blender',
@@ -95,24 +95,28 @@ const Skills = () => {
   const [ activeIndex, setActiveIndex ] = useState(0);
   return (
     <>
+      <div className={`${globals.eyebrow}`}>// Skills</div>
+      <h2 className={globals.sectionTitle}>What can I do?</h2>
+      <div className={styles.skills__container}>
       <ul className={styles.skills__list}>
-      {skills.map((skill,index) => (
-        <li key={index} onClick={() => {setActiveIndex(index)}}>
-          <BallCanvas icon={skill.img} index={index} activeIndex={activeIndex}/>
-        </li>
-      ))}
-      </ul>
-      <div className={styles.skills__info}>
-        <div className={styles.skills__info_left}>
-          <div className={styles.skills__img_wrapper}><img src={skills[activeIndex].img} alt="" /></div>
+        {skills.map((skill,index) => (
+          <li key={index} onClick={() => {setActiveIndex(index)}} data-active={activeIndex === index}>
+            <BallCanvas icon={skill.img} index={index} activeIndex={activeIndex}/>
+          </li>
+        ))}
+        </ul>
+        <div className={styles.skills__info}>
+          <div className={styles.skills__info_left}>
+            <div className={styles.skills__img_wrapper}><img src={skills[activeIndex].img} alt="" /></div>
+          </div>
+          <div className={styles.skills__info_right}>
+            <h3>{skills[activeIndex].title}</h3>
+            <div>{skills[activeIndex].desc}</div>
+            <div className={styles.skills__level} data-level={skills[activeIndex].level}>{skills[activeIndex].level}</div>
+          </div>
         </div>
-        <div className={styles.skills__info_right}>
-          <h3>{skills[activeIndex].title}</h3>
-          <div>{skills[activeIndex].desc}</div>
-          <div className={styles.skills__level} data-level={skills[activeIndex].level}>{skills[activeIndex].level}</div>
-        </div>
-
       </div>
+
       {/* <img className={styles.soyjaks__img} src={soyjaks} alt="" /> */}
     </>
   )

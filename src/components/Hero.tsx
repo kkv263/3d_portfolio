@@ -1,4 +1,3 @@
-import ComputersCanvas from './canvas/Computers';
 import styles from '../styles/Hero.module.scss'
 import globals from '../styles/globals.module.scss'
 import vidURL from '../assets/herovideo.mp4';
@@ -8,7 +7,7 @@ const Hero = () => {
   return (
     <>
       <div className={styles.hero__content}>
-        <div className={styles.eyebrow}>Developer</div>
+        <div className={`${globals.eyebrow} ${styles.hero__eyebrow}`}>// Developer</div>
         <h1>
           <span>Kevin</span> 
           <span>Vu</span> 
@@ -16,11 +15,11 @@ const Hero = () => {
         <div>(and an artist somewhat.)</div>
       </div>
       <div className={styles.hero__canvas}>
-        {/* <ComputersCanvas /> */}
         <div className={styles.video__wrapper}>
           <video autoPlay muted loop src={vidURL}></video>
         </div>
       </div>
+      <div className={globals.mouse}></div>
     </>
   )
 }

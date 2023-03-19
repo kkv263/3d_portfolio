@@ -40,15 +40,63 @@ button {
 .container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 16px;
 }
 
 .sectionTitle {
-  display: inline-flex;
-  justify-content: center;
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
-  background-color: variables.$primary-color;
-  color: variables.$secondary-color;
-  margin: 0;
+  margin-bottom: 16px;
   padding: 8px;
+  font-size: 64px;
+
+  @media (max-width: 1023px) {
+    text-align: center;
+    justify-content: center;
+    font-size: 48px;
+  }
+  
+}
+
+.eyebrow {
+  padding-bottom: 0px;
+  letter-spacing: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  @media (max-width: 1023px) {
+    text-align: center;
+  }
+}
+
+
+.mouse {
+	width: 24px;
+	height: 48px;
+	border: 3px solid variables.$primary-color;;
+	border-radius: 60px;
+	position: absolute;
+  bottom: 0;
+  left: 50%;
+	&::before {
+		content: '';
+		width: 10px;
+		height: 10px;
+		position: absolute;
+		top: 10px;
+		left: 50%;
+		transform: translateX(-50%);
+		background-color: variables.$primary-color;
+		border-radius: 50%;
+		opacity: 1;
+		animation: wheel 2s infinite;
+	}
+}
+
+@keyframes wheel {
+	to {
+		opacity: 0;
+		top: 30px;
+	}
 }
