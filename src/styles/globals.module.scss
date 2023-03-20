@@ -13,6 +13,10 @@ main {
   position: relative;
   z-index: 1;
   margin-bottom: 50vh;
+
+  @media (max-width: 1023px) {
+    margin-bottom: 0;
+  }
 }
 
 h1,

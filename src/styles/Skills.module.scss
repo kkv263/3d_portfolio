@@ -47,7 +47,7 @@
   border-radius: 4px;
   padding: 24px 16px;
   position: relative;
-  max-width: 800px;
+  max-width: 720px;
 
   &_left {
     padding-right: 16px;
@@ -55,6 +55,7 @@
   
   &_right {
     width: 100%;
+    padding-bottom: 16px;
   }
 }
 

@@ -11,6 +11,11 @@ footer.footer {
   display: flex;
   justify-content: center;
 
+  @media (max-width: 1023px) {
+    position: relative;
+    height: auto;
+  }
+
   // span {
   //   color: variables.$secondary-color;
   //   display: flex;
