@@ -34,6 +34,7 @@ const CartsCanvas = ( {cart}:any ) => {
           minPolarAngle={Math.PI / 2}
           autoRotate
           autoRotateSpeed={3}
+          enablePan={false}
         />
         <Carts cart={cart}/>
       </Suspense>
