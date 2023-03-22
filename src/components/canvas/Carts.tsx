@@ -1,6 +1,7 @@
 import { Suspense, useEffect,  useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
+import CanvasLoader from '../Loader';
 
 const Carts = (props:any) => {
   const cart = useGLTF(props.cart) as any;
@@ -26,8 +27,7 @@ const CartsCanvas = ( {cart}:any ) => {
       camera={{ position: [4, 0, 0], fov: 60 }}
       gl={{ preserveDrawingBuffer: true }}
     >
-      {/* <Suspense fallback={<CanvasLoader />}> */}
-      <Suspense>
+      <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}

@@ -14,8 +14,8 @@ import figma from '../assets/skills/figma.png'
 import photoshop from '../assets/skills/photoshop.png'
 import blender from '../assets/skills/blender.png'
 import kermit from '../assets/skills/kermit.png'
-import { useState }  from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect }  from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Skills = () => {
   const skills = [
@@ -93,32 +93,59 @@ const Skills = () => {
     },
   ]
   const [ activeIndex, setActiveIndex ] = useState(0);
+  const [ hideBox, setHideBox] = useState(false);
+
+  const changeIndex = (index: number) => {
+    if (index === activeIndex) { return ;}
+    setActiveIndex(index);
+    setHideBox(true);
+    setTimeout(() => {
+      setHideBox(false)
+    }, 300)
+  }
+  
+
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{
+        delay: 0.5
+      }}
+    >
       <div className={`${globals.eyebrow}`}>// Skills</div>
       <h2 className={globals.sectionTitle}>What can I do?</h2>
       <div className={styles.skills__container}>
       <ul className={styles.skills__list}>
         {skills.map((skill,index) => (
-          <li key={index} onClick={() => {setActiveIndex(index)}} data-active={activeIndex === index}>
+          <li key={index} onClick={() => changeIndex(index)} data-active={activeIndex === index}>
             <BallCanvas icon={skill.img} index={index} activeIndex={activeIndex}/>
           </li>
         ))}
         </ul>
-        <div className={styles.skills__info}>
-          <div className={styles.skills__info_left}>
-            <div className={styles.skills__img_wrapper}><img src={skills[activeIndex].img} alt="" /></div>
-          </div>
-          <div className={styles.skills__info_right}>
-            <h3>{skills[activeIndex].title}</h3>
-            <div>{skills[activeIndex].desc}</div>
-            <div className={styles.skills__level} data-level={skills[activeIndex].level}>{skills[activeIndex].level} level</div>
-          </div>
+        <div className={styles.skills__info_container}>
+          <AnimatePresence>
+            {!hideBox ? <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className={styles.skills__info}>
+              <div className={styles.skills__info_left}>
+                <div className={styles.skills__img_wrapper}><img src={skills[activeIndex].img} alt="" /></div>
+              </div>
+              <div className={styles.skills__info_right}>
+                <h3>{skills[activeIndex].title}</h3>
+                <div>{skills[activeIndex].desc}</div>
+                <div className={styles.skills__level} data-level={skills[activeIndex].level}>{skills[activeIndex].level} level</div>
+              </div>
+            </motion.div> : ``}
+          </AnimatePresence>
         </div>
       </div>
 
       {/* <img className={styles.soyjaks__img} src={soyjaks} alt="" /> */}
-    </>
+    </motion.div>
   )
 }
 

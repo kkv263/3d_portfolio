@@ -2,37 +2,49 @@ import styles from '../styles/Projects.module.scss'
 import globals from '../styles/globals.module.scss'
 import { SectionWrapper } from './hoc';
 import CartsCanvas from './canvas/Carts';
+import { motion } from 'framer-motion';
 
 const Projects = () => {
   const cards = [
     { title: 'Portfolio', 
       subtitle: 'React Landing Page',
       img: 'https://place-hold.it/480x480',
-      alt: '',
+      link: '/case-study-portfolio',
       description: `You're looking at this project now! 3D & motion was the main focus of this project. I utilized Blender to create and modify 3d models, threejs to load them on the page, and react to build out the site. 90% of the models and art on this page was done by hand by yours truly.`,
       tags: ['threejs', 'react'],
-      cart: './gameboy_cartridge_port.gltf'
+      cart: './gameboy_cartridge_port.gltf',
+      disabled: false
+
     },
     { title: 'D&D Friend Bot ', 
       subtitle: 'Discord Bot',
       img: 'https://place-hold.it/480x480',
-      alt: '',
+      link: '/case-study-friendbot',
       description: 'An all around custom general bot was created for a Dungeons and Dragons discord server. From features such as setting up timers, character management, lookup tools, and many more. Works with a database on to keep track of characters for players on the server.',
       tags: ['discord', 'python'],
-      cart: './gameboy_cartridge_friend.gltf'
+      cart: './gameboy_cartridge_friend.gltf',
+      disabled: true
     },
     { title: 'Potion (Unfinished)', 
       subtitle: 'Svelte Web Application',
       img: 'https://place-hold.it/480x480',
-      alt: '',
+      link: '/case-study-potion',
       description: 'A one stop hub primarly for streamers. The app helps streamers off/on stream by communicating with different APIs to keep track of socials. The apps also features OBS remote feature to control their streams. An implementation of user authentication (OAUTH2) and the use of a database stores users data so they can save their progress.',
       tags: ['svelte', 'supabase', 'oauth2'],
-      cart: './gameboy_cartridge_potion.gltf'
+      cart: './gameboy_cartridge_potion.gltf',
+      disabled: true
     },
   ];
 
   return (
-      <>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{
+          delay: 0.5
+        }}
+      >
         <div className={`${globals.eyebrow}`}>// PROJECTS</div>
         <h2 className={globals.sectionTitle}>What projects have I worked on?</h2>
         <ul className={styles.cards__list}>
@@ -49,13 +61,13 @@ const Projects = () => {
                 </ul>
                 <div>
                   <div className={styles.card__description}>{card.description}</div>
-                  <button type="button" className={styles.card__button}>Learn more</button>
+                  <button type="button" disabled={card.disabled} className={styles.card__button}>{card.disabled ? 'Case Study TBD': 'View Case Study'}</button>
                 </div>
               </div>
             </li>
           ))}
         </ul>
-    </>
+    </motion.div>
   )
 }
 

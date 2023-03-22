@@ -29,18 +29,15 @@ const Contact = () => {
     emailjs.sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, formRef.current!, import.meta.env.VITE_PUBLIC_API_KEY)
       .then((result) => {
           setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
+          setSentForm(true);
       }, (error) => {
         setLoading(false);
         console.error(error);
-
-        alert("Ahh, something went wrong. Please try again.");
+        setForm({
+          name: "",
+          email: "",
+          message: "",
+        });
       });
   }
 
@@ -102,7 +99,7 @@ const Contact = () => {
           <div className={styles.form__box}> 
             <div className={styles.contact__title}>get in touch:</div>
             <div className={styles.contact__success}>
-              <h3>Success! Your message has recieved and I'll do my best to get back to you!</h3>
+              <h3>Success! Your message has been recieved. I'll do my best to get back to you!</h3>
             </div>
           </div>
         }
