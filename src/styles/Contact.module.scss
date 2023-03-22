@@ -16,6 +16,7 @@
 .contact__title {
   color: variables.$secondary-color;
   font-family: 'Questrial', sans-serif;
+  padding-bottom: 8px;
 }
 
 .form__box {
@@ -86,13 +87,18 @@
 
 .form__copy__wrapper {
   display: flex;
-  justify-content: center;
-  font-size: 80px;
+  justify-content: space-between;
+  flex-direction: column;
   padding: 16px;
   text-align: right;
 
-  @media (max-width: 1023px) {
-    font-size: 48px;
+  > .contact__title {
+    font-size: 80px;
+
+    @media (max-width: 1023px) {
+      font-size: 48px;
+      padding-bottom: 32px;
+    }
   }
 }
 
@@ -119,8 +125,14 @@
 }
 
 .contact__links {
+  display: flex;
   padding-left: 0;
+  justify-content: flex-end;
+  margin: 0;
   li {
+    &:not(:last-child) {
+      padding-right: 16px;
+    }
     &:last-child {
       pointer-events: none;
       opacity: .5;
@@ -145,7 +157,7 @@
     }
 
     svg {
-      margin-right: 16px;
+      margin-right: 8px;
       width: 24px;
       height: 24px;
       fill: #fff;
