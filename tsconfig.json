@@ -19,6 +19,6 @@
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }],
   "files": [
-    "types.d.ts"
+    "src/types.d.ts"
   ]
 }
