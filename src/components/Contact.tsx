@@ -1,5 +1,4 @@
 import styles from '../styles/Contact.module.scss'
-import globals from '../styles/globals.module.scss'
 import { ReactComponent as Github } from '../assets/github-mark-white.svg'
 import { ReactComponent as LinkedIn } from '../assets/linkedin.svg'
 import { ReactComponent as Pencil } from '../assets/pencil.svg'
