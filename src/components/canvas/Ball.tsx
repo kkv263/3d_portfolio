@@ -13,14 +13,12 @@ const Ball = (props:any) => {
 
   return (
     <Float speed={3} rotationIntensity={1} floatIntensity={2}>
-      <ambientLight intensity={0.25}></ambientLight>
-      <directionalLight intensity={1} position={[0, 0, 0.05]}></directionalLight>
+      <ambientLight intensity={.75}></ambientLight>
       <animated.mesh castShadow receiveShadow scale={scale} >
-        <icosahedronGeometry args={[1, 1]} />
-        <meshStandardMaterial color={props.activeIndex === props.index ? '#111' : '#fff'} 
+        <icosahedronBufferGeometry args={[1, 1]} />
+        <meshBasicMaterial color={props.activeIndex === props.index ? '#111' : '#fff'} 
           polygonOffset
           polygonOffsetFactor={-5}
-          flatShading
         />
         <Decal position={[0, 0, 1]}
           rotation={[2 * Math.PI, 0, 6.25]}
@@ -37,7 +35,6 @@ const BallCanvas = ({ icon, index, activeIndex }: any) => {
     <Canvas
       frameloop='always'
       dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls 

@@ -8,7 +8,6 @@ const Carts = (props:any) => {
   return (
     <mesh>
       <hemisphereLight intensity={2} groundColor='black' />
-      <pointLight intensity={1} />
       <primitive
         object={cart.scene}
         scale={3}
@@ -23,9 +22,7 @@ const CartsCanvas = ( {cart}:any ) => {
   return (
     <Canvas
       frameloop='demand'
-      shadows
       camera={{ position: [4, 0, 0], fov: 60 }}
-      gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls

@@ -65,7 +65,7 @@
 }
 
 .hero__canvas {
-  width: 100%;
+  max-width: 100%;
   min-height: 400px;
   width: 500px;
 
@@ -75,6 +75,10 @@
     min-height: 320px;
     width: 400px;
     margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    width: 320px;
   }
 }
 

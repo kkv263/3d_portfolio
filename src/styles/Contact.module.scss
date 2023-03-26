@@ -32,6 +32,7 @@
     flex: 1 0 auto;
     max-width: none;
     border-left: 0;
+    border-top: 1px solid rgba(variables.$secondary-color, 0.5);
    }
 
   &:last-child {
@@ -50,8 +51,11 @@
   justify-content: center;
   width: 100%;
 
-  .input__container {
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
 
+  .input__container {
     &:first-child {
       padding-right: 16px;
     }
@@ -145,6 +149,10 @@
     color: variables.$secondary-color;
     text-decoration: none;
     padding-bottom: 16px;
+
+    @media (max-width: 1023px) {
+      padding-bottom: 0;
+    }
 
     &:hover {
       span {

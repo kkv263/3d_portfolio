@@ -14,7 +14,8 @@ import figma from '../assets/skills/figma.png'
 import photoshop from '../assets/skills/photoshop.png'
 import blender from '../assets/skills/blender.png'
 import kermit from '../assets/skills/kermit.png'
-import { useState, useEffect }  from 'react';
+// import sass from '../assets/skills/sass.png'
+import { useState }  from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Skills = () => {
@@ -91,6 +92,24 @@ const Skills = () => {
       level: 'casual',
       desc: `I can do voice impressions of kermit. It's up to you to judge if it's good enough. 😂`
     },
+    // {
+    //   title: 'Sass',
+    //   img: sass,
+    //   level: 'advanced',
+    //   desc: 'test',
+    // },
+    // {
+    //   title: 'test',
+    //   img: sass,
+    //   level: 'advanced',
+    //   desc: 'test',
+    // },
+    // {
+    //   title: 'test',
+    //   img: sass,
+    //   level: 'advanced',
+    //   desc: 'test',
+    // },
   ]
   const [ activeIndex, setActiveIndex ] = useState(0);
   const [ hideBox, setHideBox] = useState(false);
@@ -143,8 +162,6 @@ const Skills = () => {
           </AnimatePresence>
         </div>
       </div>
-
-      {/* <img className={styles.soyjaks__img} src={soyjaks} alt="" /> */}
     </motion.div>
   )
 }

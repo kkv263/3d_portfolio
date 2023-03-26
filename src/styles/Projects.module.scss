@@ -28,6 +28,7 @@
   list-style: none;
   flex-wrap: wrap;
   justify-content: center;
+  padding-left: 0;
 
   @media (max-width: 1279px) {
     flex-direction: column;
@@ -45,6 +46,8 @@
 
   @media (max-width: 767px) {
     height: 240px;
+    flex: 1 0 auto;
+    max-width: 100%;
   }
 }
 
