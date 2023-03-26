@@ -56,9 +56,6 @@ const Contact = () => {
           </div>
 
         </div>
-          {/* <div className={styles.form__box}>  */}
-
-          {/* </div> */}
           {!sentForm ? 
             <form ref={formRef} onSubmit={handleSubmit} action="" className={styles.form__box}>
               <div className={styles.contact__title}>get in touch:</div>
