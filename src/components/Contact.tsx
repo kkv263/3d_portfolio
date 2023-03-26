@@ -51,7 +51,7 @@ const Contact = () => {
             <ul className={styles.contact__links}>
               <li><a target="_blank" rel="noopener noreferrer" href='https://github.com/kkv263'><Github /><span>github</span></a></li>
               <li><a target="_blank" rel="noopener noreferrer" href='https://linkedin.com/in/kkv263/'><LinkedIn/><span>linkedin</span></a></li>
-              <li><a target="_blank" rel="noopener noreferrer"><Pencil/><span>blog (tbd)</span></a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://blog.keveloper.dev/" ><Pencil/><span>blog (new!)</span></a></li>
             </ul>
           </div>
 

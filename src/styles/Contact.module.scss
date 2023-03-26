@@ -137,10 +137,6 @@
     &:not(:last-child) {
       padding-right: 16px;
     }
-    &:last-child {
-      pointer-events: none;
-      opacity: .5;
-    }
   }
 
   a {

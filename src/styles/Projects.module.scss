@@ -110,13 +110,16 @@
 .card__button {
   display: flex;
   background-color: variables.$primary-color;
-  color: variables.$secondary-color;
-  font-family: variables.$heading-font;
-  text-transform: uppercase;
+  &, a {
+    color: variables.$secondary-color;
+    font-family: variables.$heading-font;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all .3s ease;
+  }
   border: 0;
   padding: 8px 16px;
   border: 2px solid transparent;
-  transition: all .3s ease;
 
   &[disabled] {
     pointer-events: none;
@@ -125,8 +128,10 @@
 
   &:hover,
   &:focus {
+    &, a {
+      color: variables.$primary-color;
+    }
     border: 2px solid variables.$primary-color;
-    color: variables.$primary-color;
     background-color: transparent
   }
 }
