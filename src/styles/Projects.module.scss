@@ -107,9 +107,16 @@
   padding-bottom: 16px;
 }
 
+.card__btn_wrapper {
+  display: flex;
+  align-items: center;
+}
+
 .card__button {
   display: flex;
   background-color: variables.$primary-color;
+  height: 40px;
+  align-items: center;
   &, a {
     color: variables.$secondary-color;
     font-family: variables.$heading-font;
@@ -133,5 +140,27 @@
     }
     border: 2px solid variables.$primary-color;
     background-color: transparent
+  }
+}
+
+.git__btn {
+  display: flex;
+  margin-left: 8px;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    svg path {
+      opacity: .5;
+    }
+  }
+
+  svg {
+    width: 36px;
+    height: 36px;
+    path {
+      transition: all .3s ease;
+      fill: variables.$primary-color;
+    }
   }
 }
