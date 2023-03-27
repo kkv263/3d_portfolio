@@ -14,5 +14,6 @@ footer.footer {
   @media (max-width: 1023px) {
     position: relative;
     height: auto;
+    z-index: 1;
   }
 }

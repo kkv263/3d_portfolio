@@ -14,7 +14,7 @@ import figma from '../assets/skills/figma.png'
 import photoshop from '../assets/skills/photoshop.png'
 import blender from '../assets/skills/blender.png'
 import kermit from '../assets/skills/kermit.png'
-import { useState }  from 'react';
+import { useState, useEffect }  from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Skills = () => {
@@ -95,15 +95,12 @@ const Skills = () => {
   const [ activeIndex, setActiveIndex ] = useState(0);
   const [ hideBox, setHideBox] = useState(false);
 
-  const changeIndex = (index: number) => {
-    if (index === activeIndex) { return ;}
-    setActiveIndex(index);
+  useEffect(() => {
     setHideBox(true);
     setTimeout(() => {
       setHideBox(false)
     }, 300)
-  }
-  
+  },[activeIndex])
 
   return (
     <motion.div
@@ -130,6 +127,7 @@ const Skills = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+
             className={styles.skills__info}>
             <div className={styles.skills__info_left}>
               <div className={styles.skills__img_wrapper}><img src={skills[activeIndex].img} alt="" /></div>

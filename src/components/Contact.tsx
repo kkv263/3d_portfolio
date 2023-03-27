@@ -46,7 +46,7 @@ const Contact = () => {
         <div className={styles.form__copy__wrapper}>
           <div className={styles.contact__title}>Contact details</div>
           <div className={styles.contact__footer}>
-            <div className={styles.contact__title}>also find me at:</div>
+            <div className={styles.contact__title}>find me at:</div>
             <ul className={styles.contact__links}>
               <li><a target="_blank" rel="noopener noreferrer" href='https://github.com/kkv263'><Github /><span>github</span></a></li>
               <li><a target="_blank" rel="noopener noreferrer" href='https://linkedin.com/in/kkv263/'><LinkedIn/><span>linkedin</span></a></li>

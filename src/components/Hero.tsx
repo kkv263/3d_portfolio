@@ -16,7 +16,7 @@ const Hero = () => {
       </div>
       <div className={styles.hero__canvas}>
         <div className={styles.video__wrapper}>
-          <video disableRemotePlayback autoPlay muted loop src={vidURL}></video>
+          <video disableRemotePlayback autoPlay muted loop playsInline src={vidURL}></video>
         </div>
       </div>
       <div className={globals.mouse}></div>
