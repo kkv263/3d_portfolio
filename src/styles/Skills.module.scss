@@ -45,6 +45,7 @@
   margin: 32px auto 0;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
 
   @media (max-width: 767px) {
     height: 180px;
