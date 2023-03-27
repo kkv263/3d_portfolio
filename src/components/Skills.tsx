@@ -93,11 +93,13 @@ const Skills = () => {
     },
   ]
   const [ activeIndex, setActiveIndex ] = useState(0);
+  const [ animateIndex, setAnimateIndex ] = useState(0);
   const [ hideBox, setHideBox] = useState(false);
 
   useEffect(() => {
     setHideBox(true);
     setTimeout(() => {
+      setAnimateIndex(activeIndex)
       setHideBox(false)
     }, 300)
   },[activeIndex])
@@ -130,12 +132,12 @@ const Skills = () => {
 
             className={styles.skills__info}>
             <div className={styles.skills__info_left}>
-              <div className={styles.skills__img_wrapper}><img src={skills[activeIndex].img} alt="" /></div>
+              <div className={styles.skills__img_wrapper}><img src={skills[animateIndex].img} alt="" /></div>
             </div>
             <div className={styles.skills__info_right}>
-              <h3>{skills[activeIndex].title}</h3>
-              <div>{skills[activeIndex].desc}</div>
-              <div className={styles.skills__level} data-level={skills[activeIndex].level}>{skills[activeIndex].level} level</div>
+              <h3>{skills[animateIndex].title}</h3>
+              <div>{skills[animateIndex].desc}</div>
+              <div className={styles.skills__level} data-level={skills[animateIndex].level}>{skills[animateIndex].level} level</div>
             </div>
           </motion.div> : ``}
         </AnimatePresence>
