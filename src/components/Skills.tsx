@@ -101,7 +101,7 @@ const Skills = () => {
     setTimeout(() => {
       setAnimateIndex(activeIndex)
       setHideBox(false)
-    }, 300)
+    }, 500)
   },[activeIndex])
 
   return (

@@ -29,7 +29,7 @@ const Ball = (props:any) => {
   }
 
   return (
-    <Float speed={2} rotationIntensity={0.5} floatIntensity={2}>
+    <Float speed={3} rotationIntensity={0.5} floatIntensity={3}>
       <ambientLight intensity={0.05}></ambientLight>
       <directionalLight intensity={0.15} position={[0, 0, 0.01]}/>
       <animated.mesh castShadow receiveShadow scale={scale} onClick={(e) => handleBallClick(props.index, props.setActiveIndex)} position={props.position} >
@@ -124,12 +124,16 @@ const BallCanvas = ({ setActiveIndex, activeIndex, device }: any) => {
     <Canvas
       frameloop='always'
       dpr={[1, 2]}
-      orthographic camera={{ zoom: 20, position: [0, 0, 10] }}
+      orthographic camera={{ zoom: 20, position: [0, 0, 20] }}
     >
       <Suspense fallback={<CanvasLoader />}>
-        {skills.map((skill,index) => (
-          <Ball device={device} key={index} imgUrl={skill.img} index={index} setActiveIndex={setActiveIndex} activeIndex={activeIndex} position={skill.pos}/>
-        ))}
+      <OrbitControls
+          enableZoom={false}
+          enablePan={false}
+        />
+          {skills.map((skill,index) => (
+            <Ball device={device} key={index} imgUrl={skill.img} index={index} setActiveIndex={setActiveIndex} activeIndex={activeIndex} position={skill.pos}/>
+          ))}
       </Suspense>
       <Preload all />
     </Canvas>
