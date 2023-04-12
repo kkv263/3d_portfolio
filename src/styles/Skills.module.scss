@@ -4,6 +4,10 @@
   background: variables.$secondary-color;
   position: relative;
   padding: 64px 0;
+
+  @media (max-width: 1023px) {
+    padding: 64px 0 0;
+  }
 }
 
 .skills__list {

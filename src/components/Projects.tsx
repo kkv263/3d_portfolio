@@ -19,11 +19,11 @@ const Projects = () => {
     },
     { title: 'D&D Friend Bot ', 
       subtitle: 'Discord Bot',
-      link: '/case-study-friendbot',
+      link: 'https://blog.keveloper.dev/blog/case-study-friendbot/',
       description: 'An all around custom general bot was created for a Dungeons and Dragons discord server. From features such as setting up timers, character management, lookup tools, and many more. Works with a database on to keep track of characters for players on the server.',
       tags: ['discord', 'python'],
       cart: './gameboy_cartridge_friend.gltf',
-      disabled: true,
+      disabled: false,
       github: 'https://github.com/kkv263/friendbot'
     },
     { title: 'Potion (Unfinished)', 
