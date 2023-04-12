@@ -34,7 +34,7 @@ const Ball = (props:any) => {
       <directionalLight intensity={0.15} position={[0, 0, 0.01]}/>
       <animated.mesh castShadow receiveShadow scale={scale} onClick={(e) => handleBallClick(props.index, props.setActiveIndex)} position={props.position} >
         <icosahedronGeometry args={[1, 1]} />
-        <meshStandardMaterial opacity={props.activeIndex === props.index ? 1 : 0.8} color={props.activeIndex === props.index ? '#111' : '#fff'} 
+        <meshStandardMaterial opacity={props.activeIndex === props.index ? 1 : 0.8} color={props.activeIndex === props.index ? '#111' : '#efefef'} 
           polygonOffset
           polygonOffsetFactor={-5}
           flatShading
@@ -127,10 +127,7 @@ const BallCanvas = ({ setActiveIndex, activeIndex, device }: any) => {
       orthographic camera={{ zoom: 20, position: [0, 0, 20] }}
     >
       <Suspense fallback={<CanvasLoader />}>
-      <OrbitControls
-          enableZoom={false}
-          enablePan={false}
-        />
+
           {skills.map((skill,index) => (
             <Ball device={device} key={index} imgUrl={skill.img} index={index} setActiveIndex={setActiveIndex} activeIndex={activeIndex} position={skill.pos}/>
           ))}
