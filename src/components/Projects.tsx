@@ -35,6 +35,15 @@ const Projects = () => {
       disabled: true,
       github: 'https://github.com/streamingpotion/stream-app'
     },
+    { title: "Myco's Market", 
+      subtitle: 'Ecommerce Store with DatoCMS',
+      link: '/case-study-mycos',
+      description: 'An ecommerce store that sells mushrooms that is focused on flexibility for the client. Paired with DatoCMS (a headless CMS) and snipcart (a payment framework). Site was designed to create a welcoming and laidback feeling.',
+      tags: ['nextjs', 'datocms', 'snipcart'],
+      cart: './gameboy_cartridge_mushroom.gltf',
+      disabled: true,
+      github: 'https://github.com/kkv263/next.js-ecommerce-snipcart'
+    },
   ];
 
   return (
