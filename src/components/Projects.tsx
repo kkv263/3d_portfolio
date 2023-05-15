@@ -26,7 +26,7 @@ const Projects = () => {
       disabled: false,
       github: 'https://github.com/kkv263/friendbot'
     },
-    { title: 'Potion (Unfinished)', 
+    { title: 'Potion', 
       subtitle: 'Svelte Web Application',
       link: '/case-study-potion',
       description: 'A one stop hub primarly for streamers. The app helps streamers off/on stream by communicating with different APIs to keep track of socials. The apps also features OBS remote feature to control their streams. An implementation of user authentication (OAUTH2) and the use of a database stores users data so they can save their progress.',
