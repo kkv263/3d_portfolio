@@ -102,8 +102,8 @@ const Projects = () => {
 
             <div>{activeIndex + 1} of {cards.length}</div>
             <div>
-              <button className={styles.carousel_button} onClick={() => handleClick('left')}><LeftArrow /></button>
-              <button className={styles.carousel_button} onClick={() => handleClick('right')}><RightArrow/></button>
+              <button className={styles.carousel_button} onClick={() => handleClick('left')}>&larr;</button>
+              <button className={styles.carousel_button} onClick={() => handleClick('right')}>&rarr;</button>
             </div>
           </div>
           <div className={styles.card__content}>
