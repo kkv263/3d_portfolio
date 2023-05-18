@@ -33,7 +33,7 @@
   display: flex;
   list-style: none;
   padding-left: 0;
-  width: 70%;
+  width: 75%;
   overflow: hidden;
   margin: 0 auto;
   @media (max-width: 767px) {
@@ -190,6 +190,10 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+
+  svg {
+    stroke: #000;
+  }
 
   &:hover {
     background-color: black;
