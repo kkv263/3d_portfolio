@@ -93,8 +93,8 @@ const Projects = () => {
         <div className={styles.card__carousel}>
           <ul className={styles.cards__list} ref={carouselRef}>
             {cards.map((card,index) => (
-              <li key={index} className={styles.projects__container} onClick={()=> {handleClick('', index)}}>
-                <div className={styles.cart__container} data-active={activeIndex === index}><CartsCanvas cart={card.cart}/> </div>
+              <li key={index} className={styles.projects__container} data-active={activeIndex === index} onClick={()=> {handleClick('', index)}}>
+                <div className={styles.cart__container}><CartsCanvas cart={card.cart}/> </div>
               </li>
             ))}
           </ul>
