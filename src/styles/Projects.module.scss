@@ -23,6 +23,11 @@
   width: 70%;
   overflow: hidden;
   margin: 0 auto;
+  @media (max-width: 767px) {
+    margin: 0;
+    width: auto;
+    margin-left: 32px;
+  }
 }
 
 .cart__container {
