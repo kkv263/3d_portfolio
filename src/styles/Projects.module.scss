@@ -8,13 +8,6 @@
 
 .projects__container {
   display: flex;
-  flex: 1 0 50%;
-  max-width: 50%;
-
-  @media (max-width: 1279px) {
-    flex: 1 0 100%;
-    max-width: 100%;
-  }
 
   @media (max-width: 767px) {
     flex-direction: column;
@@ -26,28 +19,25 @@
 .cards__list {
   display: flex;
   list-style: none;
-  flex-wrap: wrap;
-  justify-content: center;
   padding-left: 0;
-
-  @media (max-width: 1279px) {
-    flex-direction: column;
-  }
+  width: 70%;
+  overflow: hidden;
+  margin: 0 auto;
 }
 
 .cart__container {
-  flex: 1 0 50%;
-  max-width: 50%;
   height: 400px;
+  overflow: hidden;
+  opacity: 0.5;
+  cursor: pointer;
+  &[data-active=true] {
+    opacity: 1;
+    border: 1px solid #000;
+    border-radius: 8px;
+  }
 
   @media (max-width: 1279px) {
     height: 320px;
-  }
-
-  @media (max-width: 767px) {
-    height: 240px;
-    flex: 1 0 auto;
-    max-width: 100%;
   }
 }
 
@@ -55,8 +45,6 @@
   border-radius: 2px;
   padding: 32px 8px 8px 24px;
   position: relative;
-  flex: 1 0 45%;
-  max-width: 45%;
 
   @media (max-width: 767px) {
     flex: 1 0 auto;
@@ -162,5 +150,40 @@
       transition: all .3s ease;
       fill: variables.$primary-color;
     }
+  }
+}
+
+// Carousel
+.carousel_button_wrapper {
+  padding: 32px 8px 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  div:first-child {
+    padding-bottom: 16px;
+  }
+}
+
+.carousel_button {
+  background-color: transparent;
+  border-radius: 100px;
+  border: 2px solid #000;
+  width: 40px;
+  height: 40px;
+  transition: all .3s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: black;
+    svg {
+      stroke: #fff;
+    }
+  }
+
+  &:last-child {
+    margin-left: 16px;
   }
 }
