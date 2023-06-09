@@ -10,6 +10,26 @@
   display: flex;
   opacity: 0.5;
   transition: all .3s ease;
+  position: relative;
+
+  &_new {
+    &:after {
+      position: absolute;
+      content: 'NEW!';
+      top: 12px;
+      right: 4px;
+      padding: 0.5rem;
+      width: 6rem;
+      background: #fb8500;
+      border-radius: 8px;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2);
+      font-family: "Rubik", sans-serif;
+    }
+  }
+
 
   &[data-active=true] {
     opacity: 1;

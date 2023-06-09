@@ -4,8 +4,7 @@ import { SectionWrapper } from './hoc';
 import CartsCanvas from './canvas/Carts';
 import { motion } from 'framer-motion';
 import { ReactComponent as Github } from '../assets/github-mark-white.svg'
-import { ReactComponent as LeftArrow } from '../assets/left.svg'
-import { ReactComponent as RightArrow } from '../assets/right.svg'
+import { ReactComponent as Discord } from '../assets/discord-mark-white.svg'
 import { useRef, useState, useLayoutEffect } from 'react';
 
 const Projects = () => {
@@ -40,6 +39,17 @@ const Projects = () => {
 
 
   const cards = [
+    { title: 'LingoAI', 
+      subtitle: 'OpenAI Chatbot (Demo Soon!)',
+      link: 'https://blog.keveloper.dev/blog/case-study-lingo/',
+      description: `An OpenAI chatbot with the purpose to help you learn languages. Speak with different personalities and learn the language! Provides translation, vocabulary lookup, and audio playback on demand to help you be immersed and learn at your own pace. Japanese is the only currently supported language. Demo is coming soon! `,
+      tags: ['openai', 'langchain', 'sveltekit'],
+      cart: './gameboy_cartridge_lingo.gltf',
+      disabled: true,
+      github: 'https://github.com/kkv263/bot',
+      discord: '',
+      new: true,
+    },
     { title: 'Portfolio', 
       subtitle: 'React Landing Page',
       link: 'https://blog.keveloper.dev/blog/case-study-portfolio/',
@@ -47,17 +57,20 @@ const Projects = () => {
       tags: ['threejs', 'react'],
       cart: './gameboy_cartridge_port.gltf',
       disabled: false,
-      github: 'https://github.com/kkv263/3d_portfolio'
-
+      github: 'https://github.com/kkv263/3d_portfolio',
+      discord: '',
+      new: false,
     },
     { title: 'D&D Friend Bot ', 
       subtitle: 'Discord Bot',
       link: 'https://blog.keveloper.dev/blog/case-study-friendbot/',
-      description: 'An all around custom general bot was created for a Dungeons and Dragons discord server. From features such as setting up timers, character management, lookup tools, and many more. Works with a database on to keep track of characters for players on the server.',
+      description: 'An all around custom general bot was created for a Dungeons and Dragons discord server. From features such as setting up timers, character management, lookup tools, and many more. Works with a database on to keep track of characters for players on the server. Take a look and try it for yourself using the discord link below!',
       tags: ['discord', 'python'],
       cart: './gameboy_cartridge_friend.gltf',
       disabled: false,
-      github: 'https://github.com/kkv263/friendbot'
+      github: 'https://github.com/kkv263/friendbot',
+      discord: 'https://discord.gg/dndfriends',
+      new: false,
     },
     { title: 'Potion', 
       subtitle: 'Svelte Web Application',
@@ -66,7 +79,9 @@ const Projects = () => {
       tags: ['svelte', 'supabase', 'oauth2'],
       cart: './gameboy_cartridge_potion.gltf',
       disabled: true,
-      github: 'https://github.com/streamingpotion/stream-app'
+      github: 'https://github.com/streamingpotion/stream-app',
+      discord: '',
+      new: false,
     },
     { title: "Myco's Market", 
       subtitle: 'Ecommerce Store with DatoCMS',
@@ -75,7 +90,9 @@ const Projects = () => {
       tags: ['nextjs', 'datocms', 'snipcart'],
       cart: './gameboy_cartridge_mushroom.gltf',
       disabled: true,
-      github: 'https://github.com/kkv263/next.js-ecommerce-snipcart'
+      github: 'https://github.com/kkv263/next.js-ecommerce-snipcart',
+      discord: '',
+      new: false,
     },
   ];
 
@@ -93,7 +110,7 @@ const Projects = () => {
         <div className={styles.card__carousel}>
           <ul className={styles.cards__list} ref={carouselRef}>
             {cards.map((card,index) => (
-              <li key={index} className={styles.projects__container} data-active={activeIndex === index} onClick={()=> {handleClick('', index)}}>
+              <li key={index} className={`${styles.projects__container} ${cards[index].new ? styles.projects__container_new : ''}`} data-active={activeIndex === index} onClick={()=> {handleClick('', index)}}>
                 <div className={styles.cart__container}><CartsCanvas cart={card.cart}/> </div>
               </li>
             ))}
@@ -119,6 +136,7 @@ const Projects = () => {
               <div className={styles.card__btn_wrapper}>
                 <button type="button" disabled={cards[activeIndex].disabled} className={styles.card__button}>{cards[activeIndex].disabled ? 'Case Study TBD': <a href={cards[activeIndex].link} target="_blank" rel="noopener noreferrer">View Case Study</a>}</button>
                 <a className={styles.git__btn} target="_blank" rel="noopener noreferrer" href={cards[activeIndex].github}><Github /></a>
+                {cards[activeIndex].discord ? <a className={styles.git__btn} target="_blank" rel="noopener noreferrer" href={cards[activeIndex].discord}><Discord /></a> : ''}
               </div>
             </div>
           </div>

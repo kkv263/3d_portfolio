@@ -7,7 +7,7 @@ const Carts = (props:any) => {
   const cart = useGLTF(props.cart) as any;
   return (
     <mesh>
-      <hemisphereLight intensity={2} groundColor='black' />
+      <hemisphereLight intensity={1.35} groundColor='black' />
       <primitive
         object={cart.scene}
         scale={3}
