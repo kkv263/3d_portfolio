@@ -21,7 +21,7 @@ const Projects = () => {
   }, []);
 
   const handleClick = (direction:string = "", cardIndex:number = -1) => {
-    const scrollPos = [0, 300 , 600, 900];
+    const scrollPos = [0, 300 , 600, 900, 1200];
     let index = cardIndex;
 
     if (direction === 'right') {
