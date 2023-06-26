@@ -40,15 +40,16 @@ const Projects = () => {
 
   const cards = [
     { title: 'LingoAI', 
-      subtitle: 'OpenAI Chatbot (Demo Soon!)',
+      subtitle: 'OpenAI Chatbot',
       link: 'https://blog.keveloper.dev/blog/case-study-lingo/',
-      description: `An OpenAI chatbot with the purpose to help you learn languages. Speak with different personalities and learn the language! Provides translation, vocabulary lookup, and audio playback on demand to help you be immersed and learn at your own pace. Japanese is the only currently supported language. Demo is coming soon! `,
+      description: `An OpenAI chatbot with the purpose to help you learn languages. Speak with different personalities and learn the language! Provides translation, vocabulary lookup, and audio playback on demand to help you be immersed and learn at your own pace. Japanese is the only currently supported language.`,
       tags: ['openai', 'langchain', 'sveltekit'],
       cart: './gameboy_cartridge_lingo.gltf',
       disabled: true,
       github: 'https://github.com/kkv263/bot',
       discord: '',
       new: true,
+      landing: 'https://lingoai.vercel.app/',
     },
     { title: 'Portfolio', 
       subtitle: 'React Landing Page',
@@ -60,6 +61,7 @@ const Projects = () => {
       github: 'https://github.com/kkv263/3d_portfolio',
       discord: '',
       new: false,
+      landing: '',
     },
     { title: 'D&D Friend Bot ', 
       subtitle: 'Discord Bot',
@@ -71,6 +73,7 @@ const Projects = () => {
       github: 'https://github.com/kkv263/friendbot',
       discord: 'https://discord.gg/dndfriends',
       new: false,
+      landing: '',
     },
     { title: 'Potion', 
       subtitle: 'Svelte Web Application',
@@ -82,6 +85,7 @@ const Projects = () => {
       github: 'https://github.com/streamingpotion/stream-app',
       discord: '',
       new: false,
+      landing: '',
     },
     { title: "Myco's Market", 
       subtitle: 'Ecommerce Store with DatoCMS',
@@ -93,6 +97,7 @@ const Projects = () => {
       github: 'https://github.com/kkv263/next.js-ecommerce-snipcart',
       discord: '',
       new: false,
+      landing: '',
     },
   ];
 
@@ -126,7 +131,9 @@ const Projects = () => {
           <div className={styles.card__content}>
             <div className={styles.cards__card}>
               <header>
-                <h2 className={styles.cards__title}>{cards[activeIndex].title}</h2>
+                <h2 className={styles.cards__title}>{cards[activeIndex].title}
+                  {cards[activeIndex].landing ? <a className={styles.cards__landing} href={cards[activeIndex].landing}>See it Live &rarr;</a> : ''}
+                </h2>
                 <h4 className={styles.cards__subtitle}>{cards[activeIndex].subtitle}</h4>
               </header>
               <ul className={styles.cards__tags}>
