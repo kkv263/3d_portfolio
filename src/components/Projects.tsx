@@ -132,7 +132,7 @@ const Projects = () => {
             <div className={styles.cards__card}>
               <header>
                 <h2 className={styles.cards__title}>{cards[activeIndex].title}
-                  {cards[activeIndex].landing ? <a className={styles.cards__landing} href={cards[activeIndex].landing}>See it Live &rarr;</a> : ''}
+                  {cards[activeIndex].landing ? <a target="_blank" rel="noopener noreferrer" className={styles.cards__landing} href={cards[activeIndex].landing}>See it Live &rarr;</a> : ''}
                 </h2>
                 <h4 className={styles.cards__subtitle}>{cards[activeIndex].subtitle}</h4>
               </header>
