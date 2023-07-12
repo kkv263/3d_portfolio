@@ -45,7 +45,7 @@ const Projects = () => {
       description: `An OpenAI chatbot with the purpose to help you learn languages. Speak with different personalities and learn the language! Provides translation, vocabulary lookup, and audio playback on demand to help you be immersed and learn at your own pace. Japanese is the only currently supported language. The landing page was also created by yours truly!`,
       tags: ['openai', 'langchain', 'sveltekit'],
       cart: './gameboy_cartridge_lingo.gltf',
-      disabled: true,
+      disabled: false,
       github: 'https://github.com/kkv263/bot',
       discord: '',
       new: true,
