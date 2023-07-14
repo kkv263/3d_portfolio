@@ -1,4 +1,4 @@
-import { Suspense, useEffect,  useState } from 'react';
+import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 import CanvasLoader from '../Loader';
@@ -12,13 +12,13 @@ const Carts = (props:any) => {
         object={cart.scene}
         scale={3}
         position={[0, -1.5, 0.1]}
-        rotation={[-0.05, 0, 0]}
+        rotation={[-0.02, 20.45, 0]}
       />
     </mesh>
   );
 }
 
-const CartsCanvas = ( {cart}:any ) => {
+const CartsCanvas = ( {cart, activeIndex}:{cart:any, activeIndex:boolean} ) => {
   return (
     <Canvas
       frameloop='demand'
@@ -29,7 +29,7 @@ const CartsCanvas = ( {cart}:any ) => {
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
-          autoRotate
+          autoRotate={activeIndex}
           autoRotateSpeed={3}
           enablePan={false}
         />

@@ -116,7 +116,7 @@ const Projects = () => {
           <ul className={styles.cards__list} ref={carouselRef}>
             {cards.map((card,index) => (
               <li key={index} className={`${styles.projects__container} ${cards[index].new ? styles.projects__container_new : ''}`} data-active={activeIndex === index} onClick={()=> {handleClick('', index)}}>
-                <div className={styles.cart__container}><CartsCanvas cart={card.cart}/> </div>
+                <div className={styles.cart__container}><CartsCanvas activeIndex={index === activeIndex} cart={card.cart}/> </div>
               </li>
             ))}
           </ul>
