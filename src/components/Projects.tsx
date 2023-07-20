@@ -21,7 +21,7 @@ const Projects = () => {
   }, []);
 
   const handleClick = (direction:string = "", cardIndex:number = -1) => {
-    const scrollPos = [0, 300 , 600, 900, 1200];
+    const scrollPos = [0, 300 , 600, 900, 1200, 1500];
     let index = cardIndex;
 
     if (direction === 'right') {
@@ -39,6 +39,18 @@ const Projects = () => {
 
 
   const cards = [
+    { title: 'Code Culture (launching soon!)', 
+      subtitle: 'Clothing Brand - Ecommerce Store',
+      link: '',
+      description: `Code Culture is my own clothing brand ran as an online ecommerce store. Designs specialize in a grunge graphic style that are handdrawn by artists (including me!). This ecommerce store was built from the ground up using medusajs.`,
+      tags: ['medusajs', 'nextjs'],
+      cart: './gameboy_cartridge_code.gltf',
+      disabled: true,
+      github: 'https://github.com/kkv263/code-culture-fe',
+      discord: '',
+      new: true,
+      landing: '',
+    },
     { title: 'LingoAI', 
       subtitle: 'OpenAI Chatbot',
       link: 'https://blog.keveloper.dev/blog/case-study-lingo/',
@@ -48,14 +60,14 @@ const Projects = () => {
       disabled: false,
       github: 'https://github.com/kkv263/bot',
       discord: '',
-      new: true,
+      new: false,
       landing: 'https://lingoai.vercel.app/',
     },
     { title: 'Portfolio', 
       subtitle: 'React Landing Page',
       link: 'https://blog.keveloper.dev/blog/case-study-portfolio/',
-      description: `You're looking at this project now! 3D & motion was the main focus of this project. I utilized Blender to create and modify 3d models, threejs to load them on the page, and react to build out the site. 90% of the models and art on this page was done by hand by yours truly.`,
-      tags: ['threejs', 'react'],
+      description: `You're looking at this project now! 3D & motion was the main focus of this project. I utilized Blender to create and modify 3d models, threejs to load them on the page, and react to build out the site. 90% of the models and art on this page was done by hand by yours truly. I also have a blog site running on astroJS!`,
+      tags: ['threejs', 'react', 'astrojs'],
       cart: './gameboy_cartridge_port.gltf',
       disabled: false,
       github: 'https://github.com/kkv263/3d_portfolio',
