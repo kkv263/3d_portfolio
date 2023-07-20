@@ -43,7 +43,7 @@ const Projects = () => {
       subtitle: 'Clothing Brand - Ecommerce Store',
       link: '',
       description: `Code Culture is my own clothing brand ran as an online ecommerce store. Designs specialize in a grunge graphic style that are handdrawn by artists (including me!). This ecommerce store was built from the ground up using medusajs.`,
-      tags: ['medusajs', 'nextjs'],
+      tags: ['medusajs', 'nextjs', 'postgresql'],
       cart: './gameboy_cartridge_code.gltf',
       disabled: true,
       github: 'https://github.com/kkv263/code-culture-fe',
